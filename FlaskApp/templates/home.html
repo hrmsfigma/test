@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artmac</title>
+    <style>
+        .compute{
+            border-radius: 5px;
+            height:2rem;
+            width:6rem;
+            background-color: rgb(83, 118, 202);
+            border-color: antiquewhite;
+            cursor: pointer;
+            color: white;
+            border: none;
+            margin: 2rem 0rem 3rem 8rem;
+        }
+        #fname{
+            width: 60%;
+            height:auto;
+            margin-top: 5px;
+    
+        }
+        .sec{
+            margin: 0rem 0rem 0rem 8rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, Artmac!</h1>
+
+    <form method="post" action="{{ url_for('compute') }}">
+        <div class="sec">
+        <label for="fname">Prompt</label><br>
+        <input type="text" id="input_text" name="input_text"><br>
+    </div>
+        <button type="submit" class="compute">Compute</button>
+    </form>
+
+    {% if output_text %}
+        <p>Output Text: {{ output_text }}</p>
+    {% endif %}
+</body>
+</html>
